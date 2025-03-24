@@ -1,9 +1,14 @@
+import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/esm/Button';
+import { ThemeContext } from '../themecontext/ThemeContext';
 
 function NavBar() {
+    const {theme, toggleTheme} = useContext(ThemeContext);
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary fixed-top">
       <Container>
@@ -25,6 +30,13 @@ function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Button 
+                        variant={theme === "light" ? "dark" : "light"} 
+                        onClick={toggleTheme} 
+                        className="ms-auto"
+                    >
+                        {theme === "light" ? "Dark" : "Light"} Mode
+                    </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
