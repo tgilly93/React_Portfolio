@@ -21,7 +21,6 @@ function NavBar() {
               <NavDropdown.Item as={Link} to="/portfolio_app/src/pages/Projects.jsx">
                 My Projects
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to={"/portfolio_app/src/pages/ContactMe.jsx"}>
                 Contact Me
