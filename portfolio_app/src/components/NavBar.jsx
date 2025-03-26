@@ -3,8 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/esm/Button';
-import { ThemeContext } from '../themecontext/ThemeContext';
-import ThemeToggle from '../themecontext/ThemeToggle';
+import { ThemeContext } from '../context/ThemeContext';
+import ThemeToggle from '../context/ThemeToggle';
 
 function NavBar() {
 
