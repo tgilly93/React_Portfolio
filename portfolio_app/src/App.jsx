@@ -1,22 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import React from "react";
+import NavBar from "./components/NavBar";
 
-import React from 'react';
-import NavBar from './components/NavBar';
-
-import './App.css'
-import Container from 'react-bootstrap/esm/Container';
+import "./App.css";
+//import Container from 'react-bootstrap/esm/Container';
 
 function App() {
-  
-
   return (
-    <>
-    <NavBar />
-    <Container className='text-center mt-5'>
-      <h1>Welcome to my Portfolio!</h1>
-      <p>This is a portfolio with Light & Dark mode.</p>
-    </Container>
-    </>
-  )
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+
+  );
 }
 
 export default App;
