@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-//import { ThemeContext } from '../context/ThemeContext';
 import ThemeToggle from '../context/ThemeToggle';
 
 function NavBar() {
@@ -18,7 +17,7 @@ function NavBar() {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/portfolio_app/src/pages/AboutMe.jsx">About Me</Nav.Link>
             <NavDropdown title="Discover Me" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/portfolio_app/src/pages/Resume.jsx">Resume</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>

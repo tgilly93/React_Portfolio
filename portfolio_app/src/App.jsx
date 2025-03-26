@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import "./App.css";
 import AboutMe from "./pages/AboutMe";
 import ContactMe from "./pages/ContactMe";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio_app/src/pages/AboutMe.jsx" element={<AboutMe />} />
           <Route path="/portfolio_app/src/pages/ContactMe.jsx" element={<ContactMe />} />
+          <Route path="/portfolio_app/src/pages/Resume.jsx" element={<Resume />} />
         </Routes>
       </Router>
 
