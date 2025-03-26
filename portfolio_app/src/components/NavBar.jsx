@@ -18,8 +18,8 @@ function NavBar() {
             <Nav.Link as={Link} to="/portfolio_app/src/pages/AboutMe.jsx">About Me</Nav.Link>
             <NavDropdown title="Discover Me" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/portfolio_app/src/pages/Resume.jsx">Resume</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item as={Link} to="/portfolio_app/src/pages/Projects.jsx">
+                My Projects
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
