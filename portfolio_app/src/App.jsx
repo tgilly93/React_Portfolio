@@ -7,6 +7,7 @@ import AboutMe from "./pages/AboutMe";
 import ContactMe from "./pages/ContactMe";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/portfolio_app/src/pages/Resume.jsx" element={<Resume />} />
           <Route path="/portfolio_app/src/pages/Projects.jsx" element={<Projects />} />
         </Routes>
+        <Footer />
       </Router>
 
   );
