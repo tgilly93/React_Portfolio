@@ -8,7 +8,7 @@ import ThemeToggle from '../context/ThemeToggle';
 function NavBar() {
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary fixed-top">
+    <Navbar expand="lg" className="bg-body-tertiary sticky-top">
       <Container>
         <Navbar.Brand as={Link} to="/">TG</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

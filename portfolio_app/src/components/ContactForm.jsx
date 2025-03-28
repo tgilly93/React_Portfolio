@@ -33,11 +33,10 @@ function ContactForm() {
     };
 
   return (
-    <Container className="d-flex align-items-center justify-content-center vh-100 bg-light">
-      <Row className="w-100">
-        <Col md={6} className="mx-auto">
-          <main className="p-4 border rounded bg-white shadow">
-            <h2 className="mb-4 text-center">Contact Me!</h2>
+    <Container className="d-flex align-items-center justify-content-center vh-100">
+      <Row className="w-100 justify-content-center">
+        <Col md={8} lg={6}>
+          <main className="p-5 border rounded shadow-lg">
             <Form ref={form} onSubmit={sendEmail}>
               <Form.Group className="mb-3" controlId="name">
                 <Form.Label>Full Name</Form.Label>
