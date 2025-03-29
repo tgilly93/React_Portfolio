@@ -24,7 +24,6 @@ function ContactMe() {
 
   return (
     <Container fluid className="d-flex flex-column align-items-center justify-content-center min-vh-100">
-      <ButtonBar />
       <Row className="w-100 text-center mt-5 mb-3">
         <Col>
           <AnimatePresence mode="wait">
@@ -33,6 +32,7 @@ function ContactMe() {
         </Col>
       </Row>
       <ContactForm />
+      <ButtonBar />
     </Container>
   );
 }

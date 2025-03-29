@@ -9,7 +9,7 @@ function ButtonBar() {
         style={{ width: "60px", borderRadius: "5px" }}
         >
             <Button
-            variant="dark"
+            variant="link"
             href="https://www.linkedin.com/in/terrygilmorefullstackengineer/"
             target="_blank"
             rel="noopener noreferrer"
@@ -20,7 +20,7 @@ function ButtonBar() {
             </Button>
 
             <Button
-            variant="dark"
+            variant="link"
             href="https://github.com/tgilly93"
             target="_blank"
             rel="noopener noreferrer"
