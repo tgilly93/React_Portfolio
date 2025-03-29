@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 
+
 function ContactForm() {
     const form = useRef();
 
@@ -33,7 +34,7 @@ function ContactForm() {
     };
 
   return (
-    <Container className="d-flex align-items-center justify-content-center vh-100">
+    <Container className="d-flex flex-column align-items-center justify-content-center mb-5">
       <Row className="w-100 justify-content-center">
         <Col md={8} lg={6}>
           <main className="p-5 border rounded shadow-lg">
@@ -62,7 +63,7 @@ function ContactForm() {
                 as="textarea" 
                 name="message"
                 rows={4} 
-                placeholder="Enter your message" 
+                placeholder="Enter your message..." 
                 required 
                 />
               </Form.Group>
