@@ -1,5 +1,5 @@
 import { Container, Col } from "react-bootstrap";
-import React from "react";
+//import React from "react";
 
 function Footer() {
   return (
