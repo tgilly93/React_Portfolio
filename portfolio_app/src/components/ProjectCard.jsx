@@ -2,9 +2,6 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 
 const ProjectCard = ({ project, imageUrl }) => {
-    console.log(imageUrl);
-    
-    
     return (
         <Card className="mb-3">
             <Card.Img variant="top" src={ imageUrl } alt={`${project.name} thumb`} />
@@ -14,7 +11,22 @@ const ProjectCard = ({ project, imageUrl }) => {
                 <Card.Text>
                     <small className="text-muted">⭐ { project.stargazers_count } | { project.forks_count }</small>
                 </Card.Text>
-                <Button variant="primary" href={ project.html_url } target="_blank">View on Github</Button>
+                { project.homepage && (
+                    <Button
+                    variant="success"
+                    href={ project.homepage } 
+                    target="_blank"
+                    className="me-2">
+                        View Live!
+                        </Button>
+                )}
+                <Button
+                variant="primary"
+                href={ project.html_url } 
+                target="_blank"
+                >
+                    View on Github
+                    </Button>
             </Card.Body>
         </Card>
     );

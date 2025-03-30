@@ -2,7 +2,7 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
-import { div } from "framer-motion/client";
+
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -43,7 +43,7 @@ const Projects = () => {
                 <ProjectCard project={repo} imageUrl={imageUrl} />
               </Col>
             );
-          })};
+          })}
         </Row>
       )}
     </Container>
