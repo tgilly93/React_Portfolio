@@ -2,19 +2,11 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
-import { AnimatePresence } from "framer-motion";
-import DisappearText from "../components/DisappearText";
-
+import RotatingText from "../components/RotatingText";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const [textIndex, setTextIndex] = useState(0);
-  const textArray = [
-    "Explore my Projects!",
-    "Witness my growth as a Full Stack Engineer!"
-  ];
 
   useEffect(() => {
     const loadProjects = async() => {
@@ -30,24 +22,17 @@ const Projects = () => {
     loadProjects();
   }, []);
 
-  useEffect(() => {
-    const textChangeInterval = setInterval(() => {
-      setTextIndex((prevIndex) => (prevIndex + 1) % textArray.length);
-    }, 3000);
-
-    return () => clearInterval(textChangeInterval);
-  }, []);
-
   return (
     <Container className="mt-4">
       <Row className="w-100 text-center mt-5 mb-3">
         <Col>
-        <AnimatePresence
-        mode="wait">
-          <DisappearText key={textArray[textIndex]}
-          text={textArray[textIndex]} />
-          </AnimatePresence>
-          </Col>
+        <RotatingText
+        textArray={[
+          "Explore my Projects!",
+          "Witness my growth as a Full Stack Engineer!",
+        ]} 
+        />
+        </Col>
       </Row>
       { loading ? (
         <div className="d-flex justify-content-center">

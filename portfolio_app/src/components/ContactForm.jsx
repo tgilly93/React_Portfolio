@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 
-
 function ContactForm() {
     const form = useRef();
 
