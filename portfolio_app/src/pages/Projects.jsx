@@ -1,12 +1,53 @@
-import Container from "react-bootstrap/esm/Container";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { fetchRepositories } from "../services/githubService";
+import ProjectCard from "../components/ProjectCard";
+import { div } from "framer-motion/client";
 
-function Projects() {
+const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProjects = async() => {
+      const repos = await fetchRepositories();
+      const sortedRepos = repos.sort((a, b) => {
+        const dateA = new Date(a.pushed_at);
+        const dateB = new Date(b.pushed_at);
+        return dateB - dateA;
+      });
+
+      setProjects(sortedRepos);
+      setLoading(false);
+    };
+
+    loadProjects();
+
+  }, []);
+
   return (
-    <Container className="text-center mt-5">
-      <h1>This is a Projects Page!</h1>
-      <p>This is a portfolio with Light & Dark mode.</p>
+    <Container className="mt-4">
+      <h1 className="text-center">This is a Projects Page!</h1>
+      <p className="text-center">This is a portfolio with Light & Dark mode.</p>
+      { loading ? (
+        <div className="d-flex justify-content-center">
+           <Spinner animation= "border" />
+        </div>
+      ) : (
+        <Row>
+          { projects.map((repo) => {
+            const imageUrl = `https://github.com/tgilly93/${repo.name}/blob/main/images/${repo.name}_thumb.png?raw=true`;
+
+            return (
+              <Col key={repo.id} md={4} >
+                <ProjectCard project={repo} imageUrl={imageUrl} />
+              </Col>
+            );
+          })};
+        </Row>
+      )}
     </Container>
   );
-}
+};
 
 export default Projects;
