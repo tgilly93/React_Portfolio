@@ -4,6 +4,7 @@ import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
 import RotatingText from "../components/RotatingText";
 
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
