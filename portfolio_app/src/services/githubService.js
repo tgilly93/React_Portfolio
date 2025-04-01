@@ -12,4 +12,18 @@ export const fetchRepositories = async () => {
         console.error("Error fetching Github repos:", error);
         return [];
     }
-}
+};
+
+export const fetchProfilePic = async () => {
+    try {
+        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+        if (!response.ok) {
+            throw new Error("Failed to fetch profile picture");
+        }
+        const data = await response.json();
+        return data.avatar_url;
+    } catch (error) {
+        console.error("Error fetching Github profile picture:", error);
+        return null;
+    }
+};
