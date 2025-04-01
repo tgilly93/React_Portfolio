@@ -16,7 +16,7 @@ const RotatingText = ({ textArray, interval = 3000 }) => {
     return (
         <AnimatePresence mode="wait">
             <DisappearText 
-            key={textArray[textIndex]}
+            key={textIndex}
             text={textArray[textIndex]} 
             />
         </AnimatePresence>
