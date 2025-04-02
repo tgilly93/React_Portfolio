@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Carousel, Container } from "react-bootstrap";
 
 function PdfCarousel() {
-    const PUBLIC_URL = process.env.PUBLIC_URL || ""; 
   const pdfFiles = [
     "/pdfs/TE_Cert.pdf",
     "/pdfs/ITF+.pdf",
@@ -54,7 +53,7 @@ function PdfCarousel() {
               style={{ height: "100vh" }}
             >
               <iframe
-                src={`${PUBLIC_URL}${pdf}#toolbar=0`}
+                src={`${pdf}#toolbar=0`}
                 width="100%"
                 height="90%"
                 title={`PDF ${i + 1}`}
