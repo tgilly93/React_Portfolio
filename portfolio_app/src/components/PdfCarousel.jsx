@@ -3,23 +3,23 @@ import { Carousel, Container } from "react-bootstrap";
 
 function PdfCarousel() {
   const pdfFiles = [
-    "/pdfs/TE_Cert.pdf",
-    "/pdfs/ITF+.pdf",
-    "/pdfs/FEND_Cert.pdf",
+    "/pdfs/te_cert.pdf",
+    "/pdfs/itf_plus.pdf",
+    "/pdfs/fend_cert.pdf",
     "/pdfs/BA_Cert.pdf",
-    "/pdfs/Data.pdf",
-    "/pdfs/Cyber.pdf",
-    "/pdfs/React.pdf",
+    "/pdfs/data.pdf",
+    "/pdfs/cyber.pdf",
+    "/pdfs/react.pdf",
     "/pdfs/Backend.pdf",
-    "/pdfs/Cloud_Compute.pdf",
-    "/pdfs/Intermediate_Java.pdf",
-    "/pdfs/Java_OOP.pdf",
-    "/pdfs/Basic_Java.pdf",
-    "/pdfs/JavaScript.pdf",
-    "/pdfs/Python.pdf",
-    "/pdfs/Databases.pdf",
-    "/pdfs/Swift.pdf",
-    "/pdfs/Praisee.pdf",
+    "/pdfs/cloud_compute.pdf",
+    "/pdfs/intermediate_java.pdf",
+    "/pdfs/java_oop.pdf",
+    "/pdfs/basic_java.pdf",
+    "/pdfs/javascript.pdf",
+    "/pdfs/python.pdf",
+    "/pdfs/databases.pdf",
+    "/pdfs/swift.pdf",
+    "/pdfs/praise.pdf",
   ];
 
   const [index, setIndex] = useState(0);
@@ -53,7 +53,7 @@ function PdfCarousel() {
               style={{ height: "100vh" }}
             >
               <iframe
-                src={`{import.meta.env.BASE_URL}${pdf}#toolbar=0`}
+                src={`${import.meta.env.BASE_URL}${pdf}#toolbar=0`}
                 width="100%"
                 height="90%"
                 title={`PDF ${i + 1}`}
