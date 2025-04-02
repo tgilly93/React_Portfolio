@@ -110,7 +110,7 @@ function Description() {
             </p>
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-center mt-5">
-            <Link to="/portfolio_app/src/pages/Projects.jsx">
+            <Link to="/Projects">
               <Button variant="primary" size="lg" className="px-4 me-md-2 mb-4">
                 Continue Journey
               </Button>

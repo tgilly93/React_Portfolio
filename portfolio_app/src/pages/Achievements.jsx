@@ -1,13 +1,13 @@
 import React from "react";
 import PdfCarousel from "../components/pdfCarousel";
+import { Container } from "react-bootstrap";
 
 
 function Achievements() {
     return (
-        <>
-        <h1>This is an achievements page!</h1>
-        <PdfCarousel/>
-        </>
+        <Container>
+            <PdfCarousel />
+        </Container>
     );
 };
 

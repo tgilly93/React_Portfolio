@@ -31,7 +31,7 @@ function HomeForm() {
             </Col>
           </Row>
       <div className="lead">
-        <Link to="/portfolio_app/src/pages/AboutMe.jsx">
+        <Link to="/AboutMe">
         <Button
           variant="light"
           size="lg"
