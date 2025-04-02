@@ -33,7 +33,7 @@ function Description() {
           />
         </Col>
         <Col lg={6} className="text-center">
-          <Row className="w-'100 text-center mt-5 mb-3">
+          <Row className="w-100 text-center mt-5 mb-3">
             <Col>
               <RotatingText
                 textArray={[

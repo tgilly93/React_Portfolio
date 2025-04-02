@@ -11,7 +11,7 @@ const RotatingText = ({ textArray, interval = 3000 }) => {
         }, interval);
 
         return () => clearInterval(textChangeInterval);
-    }, [interval, textArray]);
+    }, [interval, textArray.length]);
 
     return (
         <AnimatePresence mode="wait">

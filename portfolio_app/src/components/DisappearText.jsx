@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 
-const DisappearText = ({ text, duration = 0.8 }) => {
+const DisappearText = ({ text }) => {
     const disappearVariants = {
         hidden: { opacity: 0, y: 20, filter: "blur(10px)", scale: 1.1 },
         visible: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },
@@ -15,7 +15,7 @@ const DisappearText = ({ text, duration = 0.8 }) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        transition={{ duration }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
         >{text}
         </motion.h1>
     );
