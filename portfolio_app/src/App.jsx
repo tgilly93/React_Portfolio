@@ -8,6 +8,7 @@ import ContactMe from "./pages/ContactMe";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
+import Achievements from "./pages/Achievements";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/portfolio_app/src/pages/AboutMe.jsx" element={<AboutMe />} />
-          <Route path="/portfolio_app/src/pages/ContactMe.jsx" element={<ContactMe />} />
-          <Route path="/portfolio_app/src/pages/Resume.jsx" element={<Resume />} />
-          <Route path="/portfolio_app/src/pages/Projects.jsx" element={<Projects />} />
+          <Route path="/AboutMe" element={<AboutMe />} />
+          <Route path="/ContactMe" element={<ContactMe />} />
+          <Route path="/Resume" element={<Resume />} />
+          <Route path="/Projects" element={<Projects />} />
+          <Route path="/Achievements" element={<Achievements />} />
         </Routes>
         <Footer />
       </Router>

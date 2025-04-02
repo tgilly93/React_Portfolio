@@ -11,19 +11,19 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary sticky-top">
       <Container>
-        <Navbar.Brand as={Link} to="/">TG</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/Achievements">TG</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/portfolio_app/src/pages/AboutMe.jsx">About Me</Nav.Link>
+            <Nav.Link as={Link} to="/AboutMe">About Me</Nav.Link>
             <NavDropdown title="Discover Me" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/portfolio_app/src/pages/Resume.jsx">Resume</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/portfolio_app/src/pages/Projects.jsx">
+              <NavDropdown.Item as={Link} to="/Resume">Resume</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/Projects">
                 My Projects
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to={"/portfolio_app/src/pages/ContactMe.jsx"}>
+              <NavDropdown.Item as={Link} to={"/ContactMe"}>
                 Contact Me
               </NavDropdown.Item>
             </NavDropdown>
