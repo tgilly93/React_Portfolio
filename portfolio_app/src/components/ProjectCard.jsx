@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 
 const ProjectCard = ({ project, imageUrl }) => {
+    console.log("Project data:", project);
+    
     return (
         <Card className="mb-3">
             <Card.Img variant="top" src={ imageUrl } alt={`${project.name} thumb`} />
