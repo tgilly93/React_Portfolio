@@ -11,7 +11,7 @@ const ResumeForm = () => {
         style={{ minHeight: "100vh", paddingBottom: "2rem", display: "flex", flexDirection: "column", justifyContent: "center" }}
         >
             <iframe
-            src={`${resumeUrl}#toolbar=0`}
+            src={`${import.meta.env.BASE_URL}Terry_Gilmore_SWE_Resume.pdf#toolbar=0`}
             width="90%"
             height="90vh"
             title="Resume PDF"
