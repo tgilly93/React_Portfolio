@@ -4,5 +4,6 @@
 
 
 <!-- ISSUES-START -->
+- [#2](https://github.com/tgilly93/React_Portfolio/issues/2) Set up script/wrokflow for CI/CD
 - [#1](https://github.com/tgilly93/React_Portfolio/issues/1) Post Deployment Enhancements
 <!-- ISSUES-END --> 
