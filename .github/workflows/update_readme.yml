@@ -39,7 +39,8 @@ jobs:
 
       - name: Fetch Open Issues and Update README
         run: |
-          issues=$(curl -s "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | \
+          issues=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | \
           jq -r '.[] | select(.labels | map(.name) | index("frontend")) | "- [#\(.number)](\(.html_url)) \(.title)"')
 
           awk -v new="$issues" '
