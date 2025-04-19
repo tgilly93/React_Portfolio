@@ -4,5 +4,5 @@
 
 
 <!-- ISSUES-START -->
-
+- [#1](https://github.com/tgilly93/React_Portfolio/issues/1) Post Deployment Enhancements
 <!-- ISSUES-END --> 
