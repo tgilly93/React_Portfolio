@@ -5,6 +5,10 @@
   "type": "module",
   "homepage": "https://tgilly93.github.io/React_Portfolio/?v=2",
 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgilly93/React_Portfolio.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
