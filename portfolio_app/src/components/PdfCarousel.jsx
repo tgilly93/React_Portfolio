@@ -6,11 +6,11 @@ function PdfCarousel() {
     "/pdfs/te_cert.pdf",
     "/pdfs/itf_plus.pdf",
     "/pdfs/fend_cert.pdf",
-    "/pdfs/BA_Cert.pdf",
+    "/pdfs/ba_cert.pdf",
     "/pdfs/data.pdf",
     "/pdfs/cyber.pdf",
     "/pdfs/react.pdf",
-    "/pdfs/Backend.pdf",
+    "/pdfs/backend.pdf",
     "/pdfs/cloud_compute.pdf",
     "/pdfs/intermediate_java.pdf",
     "/pdfs/java_oop.pdf",
@@ -53,7 +53,7 @@ function PdfCarousel() {
               style={{ height: "100vh" }}
             >
               <iframe
-                src={`${import.meta.env.BASE_URL}${pdf}#toolbar=0`}
+                src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}${pdf}#toolbar=0`}
                 width="100%"
                 height="90%"
                 title={`PDF ${i + 1}`}
