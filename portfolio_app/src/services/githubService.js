@@ -15,6 +15,7 @@ export const fetchRepositories = async () => {
 };
 
 export const fetchProfilePic = async () => {
+    console.log("GITHUB_USERNAME:", GITHUB_USERNAME);
     try {
         const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
         if (!response.ok) {
