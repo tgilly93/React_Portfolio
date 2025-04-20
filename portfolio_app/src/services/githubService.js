@@ -17,6 +17,7 @@ export const fetchRepositories = async () => {
 export const fetchProfilePic = async () => {
     console.log("GITHUB_USERNAME:", GITHUB_USERNAME);
     try {
+        console.log("GITHUB_USERNAME:", GITHUB_USERNAME);
         const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
         if (!response.ok) {
             throw new Error("Failed to fetch profile picture");
