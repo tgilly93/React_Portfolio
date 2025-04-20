@@ -1,5 +1,5 @@
 import React from "react";
-import PdfCarousel from "../components/pdfCarousel";
+import PdfCarousel from "../components/PdfCarousel";
 import { Container } from "react-bootstrap";
 
 
