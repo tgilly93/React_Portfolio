@@ -17,7 +17,7 @@ function HomeForm() {
 
   return (
     <Container className="d-flex flex-column min-vh-100 justify-content-center align-items-center text-center py-3">
-      <h1 className="mb-3">Welcome to my Portfolio!</h1>
+      <h1 className="mb-3">Welcome to my Portfolio</h1>
       <Row className="w-100 text-center mt-4 mb-3">
             <Col>
               <RotatingText
