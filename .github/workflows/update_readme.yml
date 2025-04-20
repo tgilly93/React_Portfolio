@@ -60,12 +60,18 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name 'github-actions[bot]'
+         git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global pull.rebase false
           git config --global core.autocrlf false
 
-          git pull origin main --rebase || git rebase --abort
+          git fetch origin
+          git checkout main
 
           git add README.md
-          git diff --cached --quiet || git commit -m "🔄 Auto-update README with open issues"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Auto-update README with open issues"
+            git push origin main
+          fi
