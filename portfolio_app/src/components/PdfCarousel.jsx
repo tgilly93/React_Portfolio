@@ -31,16 +31,16 @@ function PdfCarousel() {
     <Container
       fluid
       className="d-flex justify-content-center align-items-center"
-      style={{ 
+      style={{
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         paddingTop: "4rem",
         paddingBottom: "5rem",
-       }}
+      }}
     >
-        <h1 className="text-center mt-4 mb-4">View my Achievements!</h1>
+      <h1 className="text-center mt-4 mb-4">View my Achievements!</h1>
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
@@ -53,11 +53,20 @@ function PdfCarousel() {
               style={{ height: "100vh" }}
             >
               <iframe
-                src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}${pdf}#toolbar=0`}
+                src={`${import.meta.env.BASE_URL.replace(
+                  /\/$/,
+                  ""
+                )}${pdf}#toolbar=0`}
                 width="100%"
                 height="90%"
                 title={`PDF ${i + 1}`}
-                style={{ border: "none", display: "block", margin: "auto", textAlign: "center", backgroundColor: "#fff" }}
+                style={{
+                  border: "none",
+                  display: "block",
+                  margin: "auto",
+                  textAlign: "center",
+                  backgroundColor: "#fff",
+                }}
               />
             </div>
           </Carousel.Item>
