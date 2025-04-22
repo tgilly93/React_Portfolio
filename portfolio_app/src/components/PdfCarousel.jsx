@@ -3,23 +3,23 @@ import { Carousel, Container } from "react-bootstrap";
 
 function PdfCarousel() {
   const pdfFiles = [
-    "/pdfs/te_cert.pdf",
-    "/pdfs/itf_plus.pdf",
-    "/pdfs/fend_cert.pdf",
-    "/pdfs/ba_cert.pdf",
-    "/pdfs/data.pdf",
-    "/pdfs/cyber.pdf",
-    "/pdfs/react.pdf",
-    "/pdfs/backend.pdf",
-    "/pdfs/cloud_compute.pdf",
-    "/pdfs/intermediate_java.pdf",
-    "/pdfs/java_oop.pdf",
-    "/pdfs/basic_java.pdf",
-    "/pdfs/javascript.pdf",
-    "/pdfs/python.pdf",
-    "/pdfs/databases.pdf",
-    "/pdfs/swift.pdf",
-    "/pdfs/praise.pdf",
+    "pdfs/te_cert.pdf",
+    "pdfs/itf_plus.pdf",
+    "pdfs/fend_cert.pdf",
+    "pdfs/ba_cert.pdf",
+    "pdfs/data.pdf",
+    "pdfs/cyber.pdf",
+    "pdfs/react.pdf",
+    "pdfs/backend.pdf",
+    "pdfs/cloud_compute.pdf",
+    "pdfs/intermediate_java.pdf",
+    "pdfs/java_oop.pdf",
+    "pdfs/basic_java.pdf",
+    "pdfs/javascript.pdf",
+    "pdfs/python.pdf",
+    "pdfs/databases.pdf",
+    "pdfs/swift.pdf",
+    "pdfs/praise.pdf",
   ];
 
   const [index, setIndex] = useState(0);
@@ -49,7 +49,7 @@ function PdfCarousel() {
               >
 
               <iframe
-                src={`${pdf}#toolbar=0`}
+                src={`${import.meta.env.BASE_URL}${pdf}#toolbar=0`}
                 title={`PDF ${i + 1}`}
                 allowFullScreen
                 style={{
