@@ -41,10 +41,11 @@ function PdfCarousel() {
         {pdfFiles.map((pdf, i) => (
           <Carousel.Item key={i}>
             <div
-              className="ratio ratio-4x3 w-100"
+              className="w-100"
               style={{
-                maxWidth: "100%",
-                height: "auto",
+                position: "relative",
+                paddingTop: "56.25%", 
+                overflow: "hidden",
               }}
               >
 
@@ -53,6 +54,9 @@ function PdfCarousel() {
                 title={`PDF ${i + 1}`}
                 allowFullScreen
                 style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
                   border: "none",
                   height: "100%",
                   width: "100%",
