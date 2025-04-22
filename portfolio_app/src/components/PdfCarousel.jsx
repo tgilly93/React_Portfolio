@@ -36,52 +36,42 @@ function PdfCarousel() {
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
-        className="w-100 px-3"
+        className="w-100 px-2"
       >
         {pdfFiles.map((pdf, i) => (
           <Carousel.Item key={i}>
-            <div
-              className="pdf-wrapper">
-
+            <div className="iframe-wrapper">
               <iframe
                 src={`${import.meta.env.BASE_URL}${pdf}#toolbar=0`}
                 title={`PDF ${i + 1}`}
                 allowFullScreen
-                className="pdf-frame"
-                />
+                className="responsive-iframe"
+              />
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
       <style>
         {`
-          .pdf-wrapper {
-          position: relative;
+          .iframe-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 100%;
-          padding-top: 56.25%; 
+          height: 80vh; 
           overflow: hidden;
           }
-          .pdf-frame {
-          position: absolute;
-          top: 0;
-          left: 0;
+          .responsive-iframe {
           width: 100%;
           height: 100%;
           border: none;
-        }
-          
+          max-width: 100%;
+          max-height: 100%;
+          }
+
           @media (max-width: 768px) {
-          .pdf-wrapper iframe {
-          padding-top: 75%;
-          }
-          .pdf-frame {
-          width: 117.6%;
-          height: 117.6%;
-          transform: scale(0.85);
-          transform-origin: top left;
-          }
-          body {
-          overflow-x: hidden;
+          .iframe-wrapper {
+          height: 75vh;
           }
           }
           `}
