@@ -49,10 +49,7 @@ function PdfCarousel() {
               >
 
               <iframe
-                src={`${import.meta.env.BASE_URL.replace(
-                  /\/$/,
-                  ""
-                )}${pdf}#toolbar=0`}
+                src={`${pdf}#toolbar=0`}
                 title={`PDF ${i + 1}`}
                 allowFullScreen
                 style={{
