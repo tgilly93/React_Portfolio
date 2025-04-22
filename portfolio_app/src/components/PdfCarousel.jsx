@@ -41,9 +41,10 @@ function PdfCarousel() {
         {pdfFiles.map((pdf, i) => (
           <Carousel.Item key={i}>
             <div
-              className="w-100"
+              className="pdf-wrapper"
               style={{
                 position: "relative",
+                width: "100%",
                 paddingTop: "56.25%", 
                 overflow: "hidden",
               }}
@@ -53,6 +54,7 @@ function PdfCarousel() {
                 src={`${import.meta.env.BASE_URL}${pdf}#toolbar=0`}
                 title={`PDF ${i + 1}`}
                 allowFullScreen
+                className="pdf-iframe"
                 style={{
                   position: "absolute",
                   top: 0,
@@ -66,6 +68,16 @@ function PdfCarousel() {
           </Carousel.Item>
         ))}
       </Carousel>
+      <style>
+        {`
+          @media (max-width: 768px) {
+          .pdf-wrapper iframe {
+          transform: scale(0.85);
+          transform-origin: top left;
+          }
+          }
+          `}
+      </style>
     </Container>
   );
 }
