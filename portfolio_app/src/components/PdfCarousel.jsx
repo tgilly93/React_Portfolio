@@ -30,42 +30,35 @@ function PdfCarousel() {
   return (
     <Container
       fluid
-      className="d-flex justify-content-center align-items-center"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        paddingTop: "4rem",
-        paddingBottom: "5rem",
-      }}
+      className="d-flex flex-column align-items-center justify-content-start py-5"
     >
-      <h1 className="text-center mt-4 mb-4">View my Achievements!</h1>
+      <h1 className="text-center mb-4">View my Achievements!</h1>
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
-        style={{ width: "80%", height: "90vh" }}
+        className="w-100 px-3"
       >
         {pdfFiles.map((pdf, i) => (
           <Carousel.Item key={i}>
             <div
-              className="d-flex justify-content-center align-items-center"
-              style={{ height: "100vh" }}
-            >
+              className="ratio ratio-4x3 w-100"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+              >
+
               <iframe
                 src={`${import.meta.env.BASE_URL.replace(
                   /\/$/,
                   ""
                 )}${pdf}#toolbar=0`}
-                width="100%"
-                height="90%"
                 title={`PDF ${i + 1}`}
+                allowFullScreen
                 style={{
                   border: "none",
-                  display: "block",
-                  margin: "auto",
-                  textAlign: "center",
-                  backgroundColor: "#fff",
+                  height: "100%",
+                  width: "100%",
                 }}
               />
             </div>
