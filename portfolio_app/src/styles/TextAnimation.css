@@ -1,12 +1,10 @@
 .rotating-text-container {
-  position: relative;
   overflow: hidden;
   height: 5.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0;
 }
 
 @media (max-width: 768px) {

@@ -2,8 +2,9 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
-import RotatingText from "../components/RotatingText";
-import "../styles/Projects.css"; // Import your CSS file for styling
+import RotatingDisappearText from "../components/RotatingDisappearText";
+import "../styles/TextAnimation.css";
+
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -28,7 +29,7 @@ const Projects = () => {
       <Row className="w-100 text-center mt-5 mb-3">
         <Col>
           <div className="rotating-text-container">
-          <RotatingText
+          <RotatingDisappearText
               textArray={[
                 "Explore my Projects!",
                 "Witness my growth as a Full Stack Engineer!",
