@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://tgilly93.github.io/React_Portfolio/?v=2",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/tgilly93/React_Portfolio.git"
@@ -14,7 +13,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
-
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
