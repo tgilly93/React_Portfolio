@@ -16,6 +16,12 @@ const DisappearText = ({ text }) => {
         animate="visible"
         exit="exit"
         transition={{ duration: 0.2, ease: "easeInOut" }}
+        style={{
+            position: "absolute",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+        }}
         >{text}
         </motion.h1>
     );
