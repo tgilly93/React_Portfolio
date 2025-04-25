@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Image, Row, Col } from "react-bootstrap";
 import { fetchProfilePic as fetchProfilePicService } from "../services/githubService";
-import RotatingText from "./RotatingText";
 import { Link } from "react-router-dom";
+import RotatingDisappearText from "./RotatingDisappearText";
+import "../styles/TextAnimation.css";
 
 function Description() {
   const [profilePic, setProfilePic] = useState(null);
@@ -35,7 +36,8 @@ function Description() {
         <Col lg={6} className="text-center">
           <Row className="w-100 text-center mt-5 mb-3">
             <Col>
-              <RotatingText
+              <RotatingDisappearText
+                className="rotating-text-container"
                 textArray={[
                   <span
                     style={{ color: "red", textDecoration: "line-through" }}
@@ -90,7 +92,9 @@ function Description() {
             <p>
               After completing{" "}
               <strong>
-                Tech Elevator's Java Full-Stack Web Development Bootcamp</strong> and <strong>Udacity's Front-End Web Development Bootcamp</strong>,
+                Tech Elevator's Java Full-Stack Web Development Bootcamp
+              </strong>{" "}
+              and <strong>Udacity's Front-End Web Development Bootcamp</strong>,
               along with countless hours of self-study and online courses, I am
               proud to showcase my journey and everything I have learned so far!
             </p>
@@ -106,7 +110,9 @@ function Description() {
             <p>
               I’m excited to bring my{" "}
               <strong>
-                resilience, problem-solving mindset, and passion for development</strong> to my next opportunity!
+                resilience, problem-solving mindset, and passion for development
+              </strong>{" "}
+              to my next opportunity!
             </p>
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-center mt-5">
