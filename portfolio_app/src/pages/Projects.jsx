@@ -26,7 +26,14 @@ const Projects = () => {
     <Container className="mt-4">
       <Row className="w-100 text-center mt-5 mb-3">
         <Col>
-          <div style={{ minHeight: "3rem", overflow: "hidden" }}>
+          <div style={{
+             height: "3rem",
+             overflow: "hidden",
+             display: "flex",
+             justifyContent: "center",
+             alignItems: "center",
+             }}
+             >
             <RotatingText
               textArray={[
                 "Explore my Projects!",
