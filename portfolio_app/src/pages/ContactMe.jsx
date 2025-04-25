@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import ButtonBar from "../components/ButtonBar";
 import RotatingDisappearText from "../components/RotatingDisappearText";
-import "..styles/TextAnimation.css";
+import "../styles/TextAnimation.css";
 
 function ContactMe() {
   return (
