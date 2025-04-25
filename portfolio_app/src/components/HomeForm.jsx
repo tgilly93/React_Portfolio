@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import RotatingText from "./RotatingText";
 import { Link } from "react-router-dom";
+import RotatingDisappearText from "./RotatingDisappearText";
+import "../styles/TextAnimation.css";
 
 
 function HomeForm() {
@@ -20,7 +21,8 @@ function HomeForm() {
       <h1 className="mb-3">Welcome to my Portfolio!</h1>
       <Row className="w-100 text-center mt-4 mb-3">
             <Col>
-              <RotatingText
+            <div className="rotating-text-container">
+            <RotatingDisappearText
                 textArray={[
                     "Learn more about me!",
                     "View my Projects!",
@@ -28,6 +30,7 @@ function HomeForm() {
                     "Connect with me!",
                 ]}
               />
+            </div>
             </Col>
           </Row>
       <div className="lead">
