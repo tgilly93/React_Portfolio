@@ -4,13 +4,12 @@ import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
 import RotatingText from "../components/RotatingText";
 
-
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadProjects = async() => {
+    const loadProjects = async () => {
       const repos = await fetchRepositories();
       const sortedRepos = repos.sort((a, b) => {
         const dateA = new Date(a.pushed_at);
@@ -27,25 +26,27 @@ const Projects = () => {
     <Container className="mt-4">
       <Row className="w-100 text-center mt-5 mb-3">
         <Col>
-        <RotatingText
-        textArray={[
-          "Explore my Projects!",
-          "Witness my growth as a Full Stack Engineer!",
-        ]} 
-        />
+          <div style={{ minHeight: "3rem", overflow: "hidden" }}>
+            <RotatingText
+              textArray={[
+                "Explore my Projects!",
+                "Witness my growth as a Full Stack Engineer!",
+              ]}
+            />
+          </div>
         </Col>
       </Row>
-      { loading ? (
+      {loading ? (
         <div className="d-flex justify-content-center">
-           <Spinner animation= "border" />
+          <Spinner animation="border" />
         </div>
       ) : (
         <Row>
-          { projects.map((repo) => {
+          {projects.map((repo) => {
             const imageUrl = `https://github.com/tgilly93/${repo.name}/blob/main/images/${repo.name}_thumb.png?raw=true`;
 
             return (
-              <Col key={repo.id} md={4} >
+              <Col key={repo.id} md={4}>
                 <ProjectCard project={repo} imageUrl={imageUrl} />
               </Col>
             );
