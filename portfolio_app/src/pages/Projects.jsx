@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
 import RotatingText from "../components/RotatingText";
+import "../styles/Projects.css"; // Import your CSS file for styling
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -26,15 +27,8 @@ const Projects = () => {
     <Container className="mt-4">
       <Row className="w-100 text-center mt-5 mb-3">
         <Col>
-          <div style={{
-             height: "3rem",
-             overflow: "hidden",
-             display: "flex",
-             justifyContent: "center",
-             alignItems: "center",
-             }}
-             >
-            <RotatingText
+          <div className="rotating-text-container">
+          <RotatingText
               textArray={[
                 "Explore my Projects!",
                 "Witness my growth as a Full Stack Engineer!",
