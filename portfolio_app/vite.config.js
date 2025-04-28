@@ -5,4 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base:  '/React_Portfolio/',
+  build: {
+    target: 'esnext',
+  },
+  optimizeDeps: {
+    include: [ 'pdfjs-dist'],
+  },
+  worker: {
+    format: 'es',
+  },
 });

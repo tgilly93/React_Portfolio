@@ -1,9 +1,10 @@
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Col, Container, Row, Spinner, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { fetchRepositories } from "../services/githubService";
 import ProjectCard from "../components/ProjectCard";
 import RotatingDisappearText from "../components/RotatingDisappearText";
 import "../styles/TextAnimation.css";
+import { Link } from "react-router-dom";
 
 
 const Projects = () => {
@@ -53,6 +54,13 @@ const Projects = () => {
               </Col>
             );
           })}
+          <div className="d-grid gap-2 d-md-flex justify-content-center mt-5">
+                      <Link to="/Resume">
+                        <Button variant="primary" size="lg" className="px-4 me-md-2 mb-4">
+                          Continue Journey
+                        </Button>
+                      </Link>
+                    </div>
         </Row>
       )}
     </Container>
