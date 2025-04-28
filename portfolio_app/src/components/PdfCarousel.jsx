@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, Container, Spinner } from "react-bootstrap";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).href;
 
 function PdfCarousel() {
   const pdfFiles = [
@@ -32,7 +40,7 @@ function PdfCarousel() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -43,56 +51,48 @@ function PdfCarousel() {
     >
       <h1 className="text-center mb-4">View my Achievements!</h1>
       {loading ? (
-        <div className="d-flex justify-content-center align-items-center"
-        style={{ height: "80vh" }}>
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ height: "80vh" }}
+        >
           <Spinner animation="border" />
         </div>
       ) : (
         <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
-        className="w-100 px-2"
-      >
-        {pdfFiles.map((pdf, i) => (
-          <Carousel.Item key={i}>
-            <div className="iframe-wrapper">
-              <iframe
-                src={`${import.meta.env.BASE_URL}pdfs/${pdf.split("/").pop()}#toolbar=0`}
-                title={`PDF ${i + 1}`}
-                allowFullScreen
-                className="responsive-iframe"
-              />
-            </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+          activeIndex={index}
+          onSelect={handleSelect}
+          className="w-100 px-2"
+        >
+          {pdfFiles.map((pdf, i) => (
+            <Carousel.Item key={i}>
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{
+                  width: "90%",
+                  maxWidth: "900px",
+                  margin: "0 auto",
+                  backgroundColor: "#f5f5f5",
+                  padding: "1rem",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <Document
+                  file={`${import.meta.env.BASE_URL}${pdf}`}
+                  loading={<Spinner animation="border" />}
+                >
+                  <Page
+                    pageNumber={1}
+                    width={
+                      window.innerWidth > 768 ? 800 : window.innerWidth * 0.9
+                    }
+                  />
+                </Document>
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       )}
-
-      <style>
-        {`
-          .iframe-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 80vh; 
-          overflow: hidden;
-          }
-          .responsive-iframe {
-          width: 100%;
-          height: 100%;
-          border: none;
-          max-width: 100%;
-          max-height: 100%;
-          }
-
-          @media (max-width: 768px) {
-          .iframe-wrapper {
-          height: 75vh;
-          }
-          }
-          `}
-      </style>
     </Container>
   );
 }
