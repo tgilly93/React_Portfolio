@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Carousel, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Carousel, Container, Spinner } from "react-bootstrap";
 
 function PdfCarousel() {
   const pdfFiles = [
@@ -23,9 +23,18 @@ function PdfCarousel() {
   ];
 
   const [index, setIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); 
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Container
@@ -33,7 +42,13 @@ function PdfCarousel() {
       className="d-flex flex-column align-items-center justify-content-start py-5"
     >
       <h1 className="text-center mb-4">View my Achievements!</h1>
-      <Carousel
+      {loading ? (
+        <div className="d-flex justify-content-center align-items-center"
+        style={{ height: "80vh" }}>
+          <Spinner animation="border" />
+        </div>
+      ) : (
+        <Carousel
         activeIndex={index}
         onSelect={handleSelect}
         className="w-100 px-2"
@@ -42,7 +57,7 @@ function PdfCarousel() {
           <Carousel.Item key={i}>
             <div className="iframe-wrapper">
               <iframe
-                src={`${import.meta.env.BASE_URL}${pdf}#toolbar=0`}
+                src={`${import.meta.env.BASE_URL}pdfs/${pdf.split("/").pop()}#toolbar=0`}
                 title={`PDF ${i + 1}`}
                 allowFullScreen
                 className="responsive-iframe"
@@ -51,6 +66,8 @@ function PdfCarousel() {
           </Carousel.Item>
         ))}
       </Carousel>
+      )}
+
       <style>
         {`
           .iframe-wrapper {

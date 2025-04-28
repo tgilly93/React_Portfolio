@@ -19,4 +19,11 @@ body, html {
     flex-grow: 1;
 }
 
-/* modified for contactme.jsx. if running into styling issue create separate css files. */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+    transform: translateY(5px);
+}
