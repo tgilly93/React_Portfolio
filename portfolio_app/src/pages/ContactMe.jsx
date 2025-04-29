@@ -30,7 +30,7 @@ function ContactMe() {
       <div className="d-grid gap-2 d-md-flex justify-content-center mt-5">
             <Link to="/">
               <Button variant="primary" size="lg" className="px-4 me-md-2 mb-4">
-                Return Home <span className="arrow">→</span>
+                Return Home 
               </Button>
             </Link>
           </div>
