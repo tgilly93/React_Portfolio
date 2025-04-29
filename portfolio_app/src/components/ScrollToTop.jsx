@@ -6,7 +6,7 @@ const ScrollToTop = () => {
     const navType = useNavigationType();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }, [pathname, navType]);
     return null;
 };
