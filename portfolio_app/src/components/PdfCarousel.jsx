@@ -69,7 +69,7 @@ function PdfCarousel() {
               <div
                 className="d-flex justify-content-center align-items-center"
                 style={{
-                  width: "90%",
+                  width: "100%",
                   maxWidth: "900px",
                   margin: "0 auto",
                   backgroundColor: "#f5f5f5",
