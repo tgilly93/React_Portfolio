@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Carousel, Container, Spinner } from "react-bootstrap";
+import { Carousel, Container, Spinner, Button } from "react-bootstrap";
 import { Document, Page, pdfjs } from "react-pdf";
+import { Link } from "react-router-dom";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
@@ -93,6 +94,13 @@ function PdfCarousel() {
           ))}
         </Carousel>
       )}
+      <div className="d-grid gap-2 d-md-flex justify-content-center mt-5">
+            <Link to="/ContactMe">
+              <Button variant="primary" size="lg" className="px-4 me-md-2 mb-4">
+                Continue Journey <span className="arrow">→</span>
+              </Button>
+            </Link>
+          </div>
     </Container>
   );
 }
