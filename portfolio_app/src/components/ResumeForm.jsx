@@ -29,7 +29,6 @@ const ResumeForm = () => {
           width: "90%",
           maxWidth: "900px",
           margin: "0 auto",
-          backgroundColor: "#f5f5f5",
           padding: "1rem",
           borderRadius: "8px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
