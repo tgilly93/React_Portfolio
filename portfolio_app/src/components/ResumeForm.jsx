@@ -22,16 +22,21 @@ const ResumeForm = () => {
     <Container
       fluid
       className="d-flex flex-column justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
+      style={{ 
+        minHeight: "100vh",
+        padding: "1rem",
+        backgroundColor: "#f5f5f5",
+       }}
     >
       <div
         style={{
-          width: "90%",
+          width: "100%",
           maxWidth: "900px",
-          margin: "0 auto",
+          backgroundColor: "#ffffff",
           padding: "1rem",
           borderRadius: "8px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          boxSizing: "border-box",
         }}
       >
         <Document
@@ -43,7 +48,7 @@ const ResumeForm = () => {
             <Page
               key={`page_${index + 1}`}
               pageNumber={index + 1}
-              width={window.innerWidth > 768 ? 800 : window.innerWidth * 0.9}
+              width={Math.min(window.innerWidth * 0.9, 800)}
             />
           ))}
         </Document>
