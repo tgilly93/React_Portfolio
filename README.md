@@ -4,6 +4,5 @@
 
 
 <!-- ISSUES-START -->
-- [#5](https://github.com/tgilly93/React_Portfolio/issues/5) Fix Buttons
-- [#1](https://github.com/tgilly93/React_Portfolio/issues/1) Post Deployment Enhancements
+
 <!-- ISSUES-END --> 
