@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
+import ButtonBar from "./ButtonBar";
 
 function ContactForm() {
     const form = useRef();
@@ -69,6 +70,7 @@ function ContactForm() {
               <Button variant="primary" type="submit" className="w-100">
                 Submit
               </Button>
+              <ButtonBar />
             </Form>
           </main>
         </Col>

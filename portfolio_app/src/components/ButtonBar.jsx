@@ -1,13 +1,10 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FaGithubAlt, FaLinkedin } from "react-icons/fa6";
 
 function ButtonBar() {
     return (
-        <Container
-        className="position-fixed top-50 start-0 translate-middle-y d-flex align-items-center flex-column gap-3 p-3"
-        style={{ width: "60px", borderRadius: "5px" }}
-        >
+        <div className="d-flex justify-content-center gap-3 mt-4 mb-0">
             <Button
             variant="link"
             href="https://www.linkedin.com/in/terrygilmorefullstackengineer/"
@@ -28,7 +25,7 @@ function ButtonBar() {
             style={{ width: "50px", height: "50px" }} >
                 <FaGithubAlt size={24} />
             </Button>
-        </Container>
+        </div>
     );
 };
 
