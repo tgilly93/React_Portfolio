@@ -24,7 +24,7 @@ function ContactMe() {
         </Col>
       </Row>
       <ContactForm />
-    </Container>
+   </Container>
   );
 }
 
