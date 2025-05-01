@@ -3,6 +3,13 @@ body, html {
     margin: 0;
 }
 
+body[data-bs-theme="light"] {
+    background: linear-gradient(135deg, #d9f2e6, #a1c4fd);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .footer {
     position: relative;
     bottom: 0;
