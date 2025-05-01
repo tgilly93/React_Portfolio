@@ -46,7 +46,7 @@ const Projects = () => {
       ) : (
         <Row>
           {projects.map((repo) => {
-            const imageUrl = `https://github.com/tgilly93/${repo.name}/blob/main/images/${repo.name}_thumb.png?raw=true`;
+            const imageUrl = `https://raw.githubusercontent.com/tgilly93/${repo.name}/main/images/${repo.name}_thumb.png`;
 
             return (
               <Col key={repo.id} md={4}>
