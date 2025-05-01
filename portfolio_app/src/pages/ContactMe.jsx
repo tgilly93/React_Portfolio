@@ -1,6 +1,8 @@
 import ContactForm from "../components/ContactForm";
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import ButtonBar from "../components/ButtonBar";
 import RotatingDisappearText from "../components/RotatingDisappearText";
 import "../styles/TextAnimation.css";
 
@@ -24,7 +26,15 @@ function ContactMe() {
         </Col>
       </Row>
       <ContactForm />
-   </Container>
+      <ButtonBar />
+      <div className="d-grid gap-2 d-md-flex justify-content-center mt-5">
+            <Link to="/">
+              <Button variant="primary" size="lg" className="px-4 me-md-2 mb-4">
+                Return Home 
+              </Button>
+            </Link>
+          </div>
+    </Container>
   );
 }
 

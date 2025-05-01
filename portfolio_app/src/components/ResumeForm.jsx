@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -13,24 +13,37 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 const ResumeForm = () => {
   const resumeUrl = `${import.meta.env.BASE_URL}Terry_Gilmore_SWE_Resume.pdf`;
   const [numPages, setNumPages] = useState(null);
+  const [pageWidth, setPageWidth] = useState(800);
+  const containerRef = useRef(null);
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
   };
 
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.offsetWidth;
+        setPageWidth(Math.min(width, 800));
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   return (
     <Container
       fluid
-      className="d-flex flex-column justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
+      className="d-flex flex-column justify-content-center align-items-center py-4"
     >
       <div
+        ref={containerRef}
         style={{
-          width: "90%",
+          width: "100%",
           maxWidth: "900px",
           margin: "0 auto",
           backgroundColor: "#f5f5f5",
-          padding: "1rem",
           borderRadius: "8px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
@@ -44,7 +57,7 @@ const ResumeForm = () => {
             <Page
               key={`page_${index + 1}`}
               pageNumber={index + 1}
-              width={window.innerWidth > 768 ? 800 : window.innerWidth * 0.9}
+              width={pageWidth}
             />
           ))}
         </Document>
