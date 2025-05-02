@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 
-const RotatingDisappearText = ({ textArray, interval = 3000, style = {} }) => {
+const RotatingDisappearText = ({ textArray, interval = 2200, style = {} }) => {
     const [textIndex, setTextIndex] = useState(0);
 
     useEffect(() => {

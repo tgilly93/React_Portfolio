@@ -62,6 +62,7 @@ function PdfCarousel() {
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
+          interval={2500}
           className="w-100 px-2"
         >
           {pdfFiles.map((pdf, i) => (
